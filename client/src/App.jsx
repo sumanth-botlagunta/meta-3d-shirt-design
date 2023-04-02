@@ -1,5 +1,13 @@
+import Canvas from './canvas/Index';
+import { Home, Customizer } from './pages';
 function App() {
-  return <div className="font-bold underline">welcome to the Meta 3d</div>;
+  return (
+    <main className="app transition-all ease-in">
+      <Home />
+      <Canvas />
+      <Customizer />
+    </main>
+  );
 }
 
 export default App;
