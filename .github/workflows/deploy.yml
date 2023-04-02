@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: move to client directory
+        run: cd client
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
