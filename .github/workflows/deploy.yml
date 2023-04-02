@@ -23,7 +23,7 @@ jobs:
         run: cd client
 
       - name: Install dependencies
-        uses: npm i
+        uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
