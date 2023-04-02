@@ -23,7 +23,7 @@ jobs:
         run: cd client
 
       - name: Install dependencies
-        uses: npm install
+        uses: npm i
 
       - name: Build project
         run: npm run build
