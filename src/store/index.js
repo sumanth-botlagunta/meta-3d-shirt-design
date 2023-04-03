@@ -14,7 +14,7 @@ const state = proxy({
   color: randomColor(),
   isLogoTexture: true,
   isFullTexture: false,
-  logoDecal: './threejs.png',
+  logoDecal: './github.png',
   fullDecal: './threejs.png',
 });
 
