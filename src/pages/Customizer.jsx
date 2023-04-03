@@ -8,20 +8,12 @@ import { download } from '../assets';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
-import {
-  AiPicker,
-  ColorPicker,
-  FilePicker,
-  Tab,
-  CustomButton,
-} from '../components';
+import { ColorPicker, FilePicker, Tab, CustomButton } from '../components';
 
 const Customizer = () => {
   const snap = useSnapshot(state);
 
   const [file, setFile] = useState('');
-  const [Prompt, setPrompt] = useState('');
-  const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState('');
   const [activeFilterTab, setActiveFilterTab] = useState({
@@ -33,8 +25,6 @@ const Customizer = () => {
     switch (activeEditorTab) {
       case 'colorpicker':
         return <ColorPicker />;
-      case 'aipicker':
-        return <AiPicker />;
       case 'filepicker':
         return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
       default:
@@ -88,6 +78,11 @@ const Customizer = () => {
         break;
       case 'stylishShirt':
         state.isFullTexture = !activeFilterTab[tabName];
+        break;
+      case 'download':
+        // download canvas to image using custom name
+
+        downloadCanvasToImage(snap.canvas, config.canvasName);
         break;
       default:
         state.isLogoTexture = true;
